@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+       <meta charset="UTF-8" >
+       <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0">
+       <title>Home</title>
+       <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <form id="currency-form">
+            <h1>Currency Converter</h1>
+            <div class="col">
+                <select id="from-currency">
+                    <option value="">Select Currency</option>
+                    <option value="USD">USD</option>
+                    <option value="INR">INR</option>
+                    <option value="EUR">EUR</option>
+                    <option value="CAD">CAD</option>
+                    <option value="JPY">JPY</option>
+                    <option value="CHF">CHF</option>
+                    <option value="GBP">GBP</option>
+                </select>
+                <input type="text" id="input-amount" placeholder="Amount">
+            </div>
+            <div class="col">
+                <select id="to-currency">
+                    <option value="">Select Currency</option>
+                    <option value="USD">USD</option>
+                    <option value="INR">INR</option>
+                    <option value="EUR">EUR</option>
+                    <option value="CAD">CAD</option>
+                    <option value="JPY">JPY</option>
+                    <option value="CHF">CHF</option>
+                    <option value="GBP">GBP</option>
+                </select>
+                <input type="text" id="output-amount" placeholder="Converted Amount">
+            </div>
+            <button type="button" onclick="convertCurrency()">Convert</button>
+        </form>
+    
+        <script>
+            // Conversion rates (example rates, you can replace these with live rates)
+            const rates = {
+                USD: 1,
+                INR: 83.20,
+                EUR: 0.92,
+                CAD: 1.36,
+                JPY: 149.25,
+                CHF: 0.89,
+                GBP: 0.78
+            };
+            function convertCurrency() {
+                const fromCurrency = document.getElementById('from-currency').value;
+                const toCurrency = document.getElementById('to-currency').value;
+                const inputAmount = parseFloat(document.getElementById('input-amount').value);
+                const outputAmount = document.getElementById('output-amount');
+    
+                if (fromCurrency && toCurrency && !isNaN(inputAmount)) {
+                    // Convert amount to USD first, then to target currency
+                    const amountInUSD = inputAmount / rates[fromCurrency];
+                    const convertedAmount = amountInUSD * rates[toCurrency];
+                    outputAmount.value = convertedAmount.toFixed(2);
+                } else {
+                    outputAmount.value = 'Invalid input';
+                }
+            }
+        </script>
+    </body>
+    </html>
+ 
