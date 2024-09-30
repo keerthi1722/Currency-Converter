@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: black;
+}
+h1{
+    color: white;
+    text-align: center;
+    margin-top: 20%;
+    padding: 15px 20px;
+    font-size: 40px;
+    font-weight: bold;
+}
+form{
+    text-align: center;
+   justify-content: space-between;
+   
+}
+.col{
+    display: inline;
+}
+select{
+    padding: 7px 20px;
+    background-color: white;
+    color: black;
+    font-size:15px;
+    font-weight: 600;
+    margin-left: 5%;
+}
+input{
+    padding: 7px 35px;
+    font-size:20px;
+    color: blue;
+}
+button{
+    padding:10px 25px;
+    background-color: orangered;
+    color: aliceblue;
+    border-radius: 20px;
+    transform: translate(-510%,200%);
+    font-size: 15px;
+    font-weight: bold; 
+    cursor: pointer;
+}
